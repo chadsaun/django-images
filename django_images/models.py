@@ -1,17 +1,13 @@
 import hashlib
 import os.path
+from importlib import import_module
 from io import BytesIO
 
-from django.db import models
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.core.urlresolvers import reverse
-from django.dispatch import receiver
 import PIL
-
-try:
-    from importlib import import_module
-except ImportError:
-    from django.utils.importlib import import_module
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.db import models
+from django.dispatch import receiver
+from django.urls import reverse
 
 from . import utils
 from .settings import IMAGE_SIZES, IMAGE_PATH, IMAGE_AUTO_DELETE
